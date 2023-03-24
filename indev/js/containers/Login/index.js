@@ -1,13 +1,23 @@
 import InputComponent from "../../components/input.js";
-import ButtonComponent from "../../components/button.js";
+import {ButtonComponent,WelcomeButtonComponent,
+  ServicesButtonComponent,ProductsButtonComponent,AboutUsButtonComponent} from "../../components/button.js";
+import RegisterScreen from "../Register/index.js";
+import WelcomePageScreen from "../WelcomePage/index.js";
 import { checkEmail, checkPassword } from "../../common/validation.js";
+import {loginWithEmailPassword} from "../../firebase/auth.js"
+import app from "../../index.js";
 class LoginScreen {
   $email;
   $password;
 
+
   $submit;
+  $link;
 
   $container;
+  $imageCover;
+  $formLogin;
+  $titleScreen;
 
   constructor() {
     this.$container = document.createElement("div");
@@ -23,6 +33,12 @@ class LoginScreen {
     this.$titleScreen = document.createElement("div");
     this.$titleScreen.classList.add("big-title");
     this.$titleScreen.innerText = "Login";
+    
+    this.$link = document.createElement("a");
+    this.$link.innerText = "I don't have an account"
+    this.$link.classList.add("link");
+    this.$link.addEventListener("click",this.handleChangeRegisterScreen)
+
     this.$email = new InputComponent(
       "Email address",
       "email",
@@ -42,7 +58,20 @@ class LoginScreen {
       ["btn", "btn-primary", "d-block", "mt-3"],
       "submit"
     );
+    this.$imageCover.addEventListener("click",()=>{
+      const home = new WelcomePageScreen;
+      app.changeActiveScreen(home)
+    })
   }
+  setLoading =()=> {
+    this.$btnSubmit.render().innerText="";
+    this.$btnSubmit.render().innerHTML=`<div class="loader"></div>`
+  }
+  handleChangeRegisterScreen = (e) => {
+    e.preventDefault();
+    const register = new RegisterScreen()
+    app.changeActiveScreen(register);
+  };
   handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = e.target;
@@ -62,7 +91,8 @@ class LoginScreen {
     }
     console.log("check", isError);
     if (!isError) {
-      console.log("thanh cong");
+      this.setLoading()
+      // loginWithEmailPassword(email.value,password.value)
     }
   };
   render() {
@@ -70,7 +100,8 @@ class LoginScreen {
       this.$titleScreen,
       this.$email.render(),
       this.$password.render(),
-      this.$btnSubmit.render()
+      this.$btnSubmit.render(),
+      this.$link
     );
     this.$container.append(this.$imageCover, this.$formLogin);
     return this.$container;

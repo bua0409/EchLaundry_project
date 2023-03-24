@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 
 * {
-  font-family: "Montserrat", sans-serif !important;
 }
 
 body {
@@ -12,19 +11,10 @@ body {
   text-align: left;
   background-color: #f5f8fa;
 }
-
 .img-cover {
   width: 60%;
   height: 100vh;
   background: url("https://source.unsplash.com/random") no-repeat center / cover;
-}
-
-.form-container {
-  flex-grow: 1;
-  padding: 0px 30px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .big-title {
@@ -54,27 +44,26 @@ body {
   transition: 0.15s;
 }
 .btnStart:hover {
-  color:rgb(21, 214, 27) !important;
+  color: rgb(21, 214, 27) !important;
   background: #75591b !important;
   transition: 0.5s;
 }
-.label{
-  color:#212529;
+
+.btn:hover {
+  color: rgb(250, 250, 250) !important;
+  background: #1b9187 !important;
+  transition: 0.5s;
 }
-.input{
-  background-color:rgb(140, 219, 80) !important;
+.label {
+  color: #212529;
+}
+.input {
+  background-color: rgb(140, 219, 80) !important;
   color: #75591b;
   display: inline-block;
   margin: 0px 10px;
   border: 1px solid #4da228;
 }
-
-.img-cover {
-  width: 60%;
-  height: 100vh;
-  background: url("http://clipartmag.com/images/frog-cartoon-picture-6.jpg") no-repeat center / cover;
-}
-
 .form-container {
   flex-grow: 1;
   padding: 0px 30px;
@@ -95,8 +84,208 @@ body {
   border-radius: 10px;
 }
 .label-input {
-
 }
-.error{
+.error {
   color: red;
+}
+.home-nav {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #ffffff;
+}
+.sign-nav {
+  background-color: #ffffff;
+}
+.logo-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 1px solid rgb(13, 231, 158);
+
+  background: url("https://clipartmag.com/images/frog-cartoon-picture-6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.link {
+  text-decoration: none;
+  text-align: right;
+  margin-top: 12px;
+  cursor: pointer;
+}
+.name {
+  color: rgb(7, 141, 107);
+  font-size: 5cm;
+  font-family: Times New Roman, Times, serif;
+}
+.infor {
+  width: 1000px;
+  color: rgb(7, 141, 107);
+  font-size: large;
+  font-style: italic;
+  font-weight: 900;
+  text-align: right;
+}
+.firstBtn {
+  width: fit-content;
+  justify-content: center;
+}
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.mail {
+  padding: 0;
+  margin: 0;
+}
+.mail h1 {
+  font-size: 40px;
+  font-weight: 700;
+  padding: 20px;
+}
+.mail p {
+  padding: 10px;
+}
+.title {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.bi {
+  color: #ffffff;
+  margin-left: 20px;
+  text-align: center;
+}
+.contact {
+  color: #ffffff;
+  position: relative;
+  min-height: fit-content;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: rgb(36, 163, 121);
+  width: 100%;
+}
+.store-name {
+  width: 200px;
+  height: 50px;
+  border: #ffffff;
+
+  background: url("/EchLaundry_project/indev/images/Ech Laundry.png");
+  background-repeat: no-repeat;
+  background-size: 400%;
+  background-position: center;
+}
+.img-homepage {
+  position: relative;
+  margin-top: 25px;
+  height: 500px;
+  width: 100%;
+  padding-top: 10%;
+  background-color: #3498db;
+  background: url("/EchLaundry_project/indev/images/backgroud_homepage.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+.intro {
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  font-style: italic;
+  font-style: oblique;
+  font-size: xx-large;
+  margin-left: 10%;
+}
+.box {
+  position: absolute;
+  width: 60%;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+}
+.box-infor1 {
+  padding: 0;
+  color: #fff;
+  width: 50%;
+  float: left;
+  min-height: 100px;
+  background-color: #6ee9df;
+  text-align: center;
+}
+.box-infor2 {
+  padding: 0;
+  color: #fff;
+  width: 50%;
+  float: left;
+  min-height: 100px;
+  background-color: #41d4c6;
+  text-align: center;
+}
+.box-infor3 {
+  padding: 0;
+  color: #fff;
+  width: 50%;
+  float: left;
+  min-height: 100px;
+  background-color: #22635d;
+  text-align: center;
+}
+.box-infor4 {
+  padding: 0;
+  color: #fff;
+  width: 50%;
+  float: left;
+  min-height: 100px;
+  background-color: #078f83;
+  text-align: center;
+}
+.infor-icon {
+  margin: 30px 0 0 0;
+  width: 100%;
+  text-align: center;
+}
+.infor-body{
+  float: left;
+    margin: 10px 0 0 0px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.icon-machine{
+  position: absolute;
+  right: 0%;
+  bottom: 0;
+  height: 200px;
+  width: 15%;
+  background: url("/EchLaundry_project/indev/images/machine3.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+.icon-machine1{
+  position: absolute;
+  left: 0%;
+  bottom: 0;
+  height: 200px;
+  width: 15%;
+  background: url("/EchLaundry_project/indev/images/laundry-clipart-18.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
